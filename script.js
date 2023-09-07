@@ -2,13 +2,14 @@
 
 // Exercice 1
 // Insérez votre code ici
-
+const firstname = "Cédric";
+const lastname = "Goessens";
 // Ne touchez pas à ceci
 document.querySelector("h1").textContent = `Bonjour ${firstname} ${lastname}`;
 
 // Exercice 2
 // Insérez votre code ici
-
+let age = 21;
 // Ne touchez pas à ceci
 document.querySelector(
   "p"
@@ -17,10 +18,11 @@ document.querySelector(
 }`;
 // Exercice 3
 // Insérez votre code ici
-
+let year = 2023;
+const birthYear = year - age;  
 // Exercice 4
 // Insérez votre code ici
-
+let user = [firstname, lastname, age, year, birthYear];
 // Ne touchez pas à ceci
 user.forEach((infoUser) => {
   switch (infoUser) {
@@ -54,7 +56,8 @@ user.forEach((infoUser) => {
 });
 // Exercice 5
 // Insérez votre code ici
-
+let backgroundColor = "darkred"
+backgroundColor = "red"
 // Ne touchez pas à ceci
 document.body.style.backgroundColor = backgroundColor;
 // Insérez votre réassignation de backgroundColor ici
@@ -63,7 +66,13 @@ document.body.style.backgroundColor = backgroundColor;
 
 // Exercice 6
 // Insérez votre code ici
-
+let car = {
+  brand : "ford",
+  model : "mustang",
+  yearConstruct : 2020,
+  color : "red",
+  image : "https://www.autoaubaine.com/actualite-automobile/images-automobiles/54677.jpg",
+};
 // Ne touchez pas à ceci
 document.getElementById(
   "firstItem"
@@ -81,6 +90,8 @@ document.getElementById("car").src = car.image;
 
 // Exercice 7
 // Insérez votre code ici
+const buttons = document.querySelectorAll("button");
+const cat = document.getElementById("cat");
 
 // Ne touche pas à ceci
 const catURL = [
@@ -109,11 +120,23 @@ buttons.forEach((btn) => {
 
 // Exercice 8
 // Insérez votre code ici
+const outputElement = document.getElementById("output");
+outputElement.innerHTML = `
+<p>Je ne sais pas quoi mettre.</p>
+<img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png">`  
 
 // Exercice 9
 // Insérez votre code ici
-
+const animals = ["Lion", "Giraffe", "Zèbre", "Serpent"];
+const listOuput = document.getElementById("listOutput");
+animals.forEach((animal) => {
+  listOuput.innerHTML += 
+  `<li>${animal}</li>
+  `;
+});
 // Exercice 10
+
+
 // Ne touchez pas au tableau
 const icons = [
   "cat-solid",
@@ -128,6 +151,27 @@ const icons = [
 ];
 
 // Insérez votre code ici
+const logoElement = document.getElementById("logo");
+const lastIndex = icons.length - 1;
+const randomIndex = Math.floor(Math.random() * (lastIndex + 1));
+const imagePath = `./img/${icons[randomIndex]}.svg`;
+logoElement.src = imagePath;
 
 // Exercice 11 : Optionnel
 // Insérez votre code ici
+
+  function selectIcon() {
+    console.log("J'appelle la fonction");
+    const iconSelect = document.getElementById("iconSelect");
+    
+
+    if (iconSelect) {
+      const imagePath = `./img/${icons[randomIndex]}.svg`;
+      const iconImage = document.getElementById("iconImage");
+      iconImage.src = imagePath;
+    }
+  }
+
+  document.getElementById("changeIcon").addEventListener("click", selectIcon);
+
+
