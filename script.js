@@ -161,17 +161,19 @@ logoElement.src = imagePath;
 // Insérez votre code ici
 
   function selectIcon() {
-    console.log("J'appelle la fonction");
-    const iconSelect = document.getElementById("iconSelect");
-    
 
-    if (iconSelect) {
-      const imagePath = `./img/${icons[randomIndex]}.svg`;
+    const iconSelect = document.getElementById("iconSelect");
+    const selectValue = iconSelect.value;
+
+    if (selectValue) {
+      const imagePath = `./img/${selectValue}.svg`;
       const iconImage = document.getElementById("iconImage");
       iconImage.src = imagePath;
     }
   }
 
   document.getElementById("changeIcon").addEventListener("click", selectIcon);
+
+
 
 
